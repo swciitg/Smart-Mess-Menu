@@ -26,7 +26,7 @@ def get_access_token():
 def fetch_target_emails(token):
     headers = {"Authorization": f"Bearer {token}"}
     subject_filter = os.getenv("EMAIL_SUBJECT")
-    url = f"https://graph.microsoft.com/v1.0/me/messages?$filter=startswith(subject,'{subject_filter}')&$top=10"
+    url = f"https://graph.microsoft.com/v1.0/me/messages?$filter=startswith(subject,'{subject_filter}')&$top=1"
     res = requests.get(url, headers=headers)
     return res.json().get("value", [])
 
