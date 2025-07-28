@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  smart-mess-menu:
+    build: .
+    container_name: smart-mess-menu
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./mess_menus:/app/mess_menus
+      - ./mess_menu_csv:/app/mess_menu_csv
+      - ./logs:/app/logs

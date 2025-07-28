@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+mess_menus/*
+mess_menu_csv/*
 # Distribution / packaging
 .Python
 build/
