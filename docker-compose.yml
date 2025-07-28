@@ -10,3 +10,8 @@ services:
       - ./mess_menus:/app/mess_menus
       - ./mess_menu_csv:/app/mess_menu_csv
       - ./logs:/app/logs
+    networks:
+            - backend_welfare-board-strapi
+networks:
+  backend_welfare-board-strapi:
+    external: true
