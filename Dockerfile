@@ -23,7 +23,7 @@ COPY . .
 # Set up a weekly cron job (Monday at 9:00 AM)
 RUN echo "0 9 * * 1 cd /app && python3 main.py >> /app/logs/cron.log 2>&1" | crontab -
 
-# Create startup script
+
 RUN echo '#!/bin/bash\n\
 # Start cron\n\
 echo "Starting cron..."\n\

@@ -9,8 +9,8 @@ model = genai.GenerativeModel("models/gemini-1.5-flash")
 
 system_prompt = os.getenv("SYSTEM_PROMPT").replace("\\n", "\n")
 
-input_folder = "../mess_menus"
-output_folder = "../mess_menu_csv"
+input_folder = "./mess_menus"
+output_folder = "./mess_menu_csv"
 
 os.makedirs(output_folder, exist_ok=True)
 
@@ -49,9 +49,9 @@ def convert_all_to_csv():
         csv_output = convert_pdf_to_csv(pdf_path)
 
 
-        output_csv_path = os.path.join(output_folder, filename.replace(".pdf", ".csv"))
-        save_csv(csv_output, output_csv_path)
         if csv_output and csv_output.strip().startswith("Day,Breakfast,Lunch,Dinner"):
+            output_csv_path = os.path.join(output_folder, filename.replace(".pdf", ".csv"))
+            save_csv(csv_output, output_csv_path)
             print(f" Saved: {output_csv_path}")
         else:
             print(f" Skipped (not a valid mess menu): {filename}")
