@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("models/gemini-1.5-flash")
+model = genai.GenerativeModel("models/gemini-2.5-pro")
 
 
 system_prompt = os.getenv("SYSTEM_PROMPT").replace("\\n", "\n")
@@ -55,4 +55,7 @@ def convert_all_to_csv():
             print(f" Saved: {output_csv_path}")
         else:
             print(f" Skipped (not a valid mess menu): {filename}")
+
+        print("Waiting for 62 seconds to respect rate limits...")
+        time.sleep(62)
 convert_all_to_csv()
