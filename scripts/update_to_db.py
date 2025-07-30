@@ -7,7 +7,7 @@ from io import BytesIO
 load_dotenv()
 
 API_URL = os.getenv('API_URL')
-FOLDER_PATH = '../mess_menu_csv'
+FOLDER_PATH = './mess_menu_csv'
 SECURITY_KEY = os.getenv('MESSMENU_SECURITY')
 
 def convert_csv_to_xlsx_bytes(csv_file_path):
