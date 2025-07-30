@@ -45,5 +45,3 @@ def upload_xlsx_files():
     else:
         print("Response:", response.text)
 
-
-upload_xlsx_files()
