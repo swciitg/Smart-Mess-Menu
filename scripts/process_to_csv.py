@@ -59,4 +59,3 @@ def convert_all_to_csv():
 
         print("Waiting for 62 seconds to respect rate limits...")
         time.sleep(62)
-convert_all_to_csv()
