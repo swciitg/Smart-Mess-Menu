@@ -56,4 +56,3 @@ def fetch_pdfs():
     for msg in emails:
         print(f" {msg['subject']}")
         download_attachments(msg["id"], token)
-fetch_pdfs()
